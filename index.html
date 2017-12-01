@@ -317,6 +317,167 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/01/2-2hexo博客/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Jeffrey Long">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="一个逗号">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/12/01/2-2hexo博客/" itemprop="url">基于Hexo&Github搭建个人博客（二）</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-01T20:59:41+08:00">
+                2017-12-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2017/12/01/2-2hexo博客/" class="leancloud_visitors" data-flag-title="基于Hexo&Github搭建个人博客（二）">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  323
+                </span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          三、配置GitHub首先注册、登录github。
+Username很重要！Username很重要！Username很重要！而且是最后博客的域名的组成部分，尽量取一个简短、全小写、好记、有意义的，比如我的jeffylong就非常不错啊hh。
+
+右上角选择 Create a new repository。Repository name填 “username”.github.io。例如，我的博客网址是https://jeffylong.github.io/ ，就填入jeffylong.github.io。成功后出现下面的画面:
+绑定SSH Key：在CMD中输入：
+ssh-keygen -t rsa
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/12/01/2-2hexo博客/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/01/2Hexo建博客/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -336,7 +497,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/12/01/2Hexo建博客/" itemprop="url">基于Hexo&Github搭建个人博客</a></h1>
+                <a class="post-title-link" href="/2017/12/01/2Hexo建博客/" itemprop="url">基于Hexo&Github搭建个人博客（一）</a></h1>
         
 
         <div class="post-meta">
@@ -366,7 +527,7 @@
 
           
           
-             <span id="/2017/12/01/2Hexo建博客/" class="leancloud_visitors" data-flag-title="基于Hexo&Github搭建个人博客">
+             <span id="/2017/12/01/2Hexo建博客/" class="leancloud_visitors" data-flag-title="基于Hexo&Github搭建个人博客（一）">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -391,7 +552,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  863
+                  930
                 </span>
               
 
@@ -420,21 +581,22 @@
           
           前言
 Hexo介绍
-github介绍
+NexT介绍
+GitHub介绍
 
-一、安装Hexo
+一、Hexo搭建本地博客
 Hexo的使用需要Node.js以及Git的支持
 
-安装Node.js，查看安装教程。安装Git.安装Hexo在磁盘任意路径下右键Git Bash Here，如我的是F:\，依次输入下列命令:
+安装Node.js，查看安装教程。安装Git.安装Hexo：在磁盘任意路径下右键Git Bash Here，如我的是F:\，依次输入下列命令:
 $ npm install hexo-cli -g
 $ hexo init blog
 $ cd blog
 $ npm install
 $ hexo g
 $ hexo s
-结果如下：
+最终命令行显示如下：
 INFO  Start processing
-INFO  Hexo is running at http://localhost:4000/. Press Ctrl+
+INFO  Hexo is running at http://localhost:4
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -685,7 +847,7 @@ theme这是第一篇博客,学着用MarkDown标记来码字,用的格式
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -698,7 +860,7 @@ theme这是第一篇博客,学着用MarkDown标记来码字,用的格式
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -765,7 +927,7 @@ theme这是第一篇博客,学着用MarkDown标记来码字,用的格式
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">1.1k</span>
+    <span title="Site words total count">1.5k</span>
   
 </div>
 
