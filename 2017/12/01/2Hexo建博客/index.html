@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next mist use-motion" lang="zh-Hans">
+<html class="theme-next gemini use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -132,7 +132,9 @@
 <meta property="og:description" content="前言 Hexo介绍 github介绍  一、安装Hexo Hexo的使用需要Node.js以及Git的支持  安装Node.js，查看安装教程。安装Git.安装Hexo在磁盘任意路径下右键Git Bash Here，如我的是F:\，依次输入下列命令: $ npm install hexo-cli -g $ hexo init blog $ cd blog $ npm install $ hexo">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://theme-next.iissnan.com/uploads/five-minutes-setup/validation-default-scheme-mac.png">
-<meta property="og:updated_time" content="2017-12-01T08:27:46.679Z">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/5308475-9f1817d2d7627f7a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/5863464-15e9bbc5b32e4c33.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2017-12-01T12:14:11.189Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="基于Hexo&amp;Github搭建个人博客">
 <meta name="twitter:description" content="前言 Hexo介绍 github介绍  一、安装Hexo Hexo的使用需要Node.js以及Git的支持  安装Node.js，查看安装教程。安装Git.安装Hexo在磁盘任意路径下右键Git Bash Here，如我的是F:\，依次输入下列命令: $ npm install hexo-cli -g $ hexo init blog $ cd blog $ npm install $ hexo">
@@ -144,7 +146,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Mist',
+    scheme: 'Gemini',
     version: '5.1.3',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
@@ -395,7 +397,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  694
+                  863
                 </span>
               
 
@@ -454,10 +456,20 @@ $ git clone https://github.com/iissnan/hexo-theme-next themes/next
 <p>当你看到站点的外观与下图所示类似时即说明你已成功安装 NexT 主题。<br><img src="http://theme-next.iissnan.com/uploads/five-minutes-setup/validation-default-scheme-mac.png" alt="http://theme-next.iissnan.com/uploads/five-minutes-setup/validation-default-scheme-mac.png"></p>
 </blockquote>
 <p>接下来，根据个人需求，对主题进行设定和功能补充。</p>
-<h4 id="增加阅读"><a href="#增加阅读" class="headerlink" title="增加阅读"></a>增加阅读</h4><h4 id="添加站内搜索"><a href="#添加站内搜索" class="headerlink" title="添加站内搜索"></a>添加站内搜索</h4><blockquote>
+<h4 id="修改文章底部-标签图标为"><a href="#修改文章底部-标签图标为" class="headerlink" title="修改文章底部#标签图标为"></a>修改文章底部#标签图标为<img src="http://upload-images.jianshu.io/upload_images/5308475-9f1817d2d7627f7a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="效果"></h4><p>修改模板/themes/next/layout/_macro/post.swig，搜索 <code>rel=&quot;tag&quot;&gt;#</code>，将 <code>#</code> 换成<code>&lt;i class=&quot;fa fa-tag&quot;&gt;&lt;/i&gt;</code>。</p>
+<h4 id="增加阅读量统计"><a href="#增加阅读量统计" class="headerlink" title="增加阅读量统计"></a>增加阅读量统计</h4><ol>
+<li><a href="https://leancloud.cn/" target="_blank" rel="noopener">Leancloud</a>，网站可以使用Github绑定登录，按提示完成登录。登录后，进入控制台，创建一个新应用。点击存储，按下图标记新建Class，Class名称必须为Counter。<br>按下图的标记复制 App ID和App Key。<br><img src="http://upload-images.jianshu.io/upload_images/5863464-15e9bbc5b32e4c33.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="http://upload-images.jianshu.io/upload_images/5863464-15e9bbc5b32e4c33.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"></li>
+<li><p>更改主题配置文件的<code>leancloud_visitors:</code>。注意将<code>enable</code>设为<code>true</code>。</p>
+<pre><code># Show number of visitors to each article.
+# You can visit https://leancloud.cn get AppID and AppKey.
+leancloud_visitors:
+  enable: true
+  app_id: #your App ID
+  app_key: #your App Key
+</code></pre><h4 id="添加站内搜索"><a href="#添加站内搜索" class="headerlink" title="添加站内搜索"></a>添加站内搜索</h4><blockquote>
 <p>这里有一段伤心的故事，被安利的第一个搜索方式是Algolia，但是我尝试了2天，依旧不能完美的实现我想要的搜索功能，没想到local Search这么称我心，千金难买早知道啊！</p>
 </blockquote>
-<ol>
+</li>
 <li><p>安装hexo-generator-searchdb，在站点的根目录下执行以下命令：</p>
 <pre><code>$ npm install hexo-generator-searchdb --save
 </code></pre></li>
@@ -472,6 +484,9 @@ local_search:
   enable: true
 </code></pre></li>
 </ol>
+<blockquote>
+<p>更多功能参考<a href="http://www.shenzekun.cn/hexo的next主题个性化配置教程.html。" target="_blank" rel="noopener">http://www.shenzekun.cn/hexo的next主题个性化配置教程.html。</a></p>
+</blockquote>
 <h4 id="我遇到的坑："><a href="#我遇到的坑：" class="headerlink" title="我遇到的坑："></a>我遇到的坑：</h4><p>bug1：配置出错</p>
 <pre><code>$ hexo algolia
 ERROR [Algolia] Please set an `HEXO_ALGOLIA_INDEXING_KEY` environment variable to enable content indexing.
@@ -664,7 +679,7 @@ ERROR &gt;&gt; Read https://npmjs.com/hexo-algolia#api-key for more informations
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一、安装Hexo"><span class="nav-number">2.</span> <span class="nav-text">一、安装Hexo</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装Node-js，查看安装教程。"><span class="nav-number">2.1.</span> <span class="nav-text">安装Node.js，查看安装教程。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装Git"><span class="nav-number">2.2.</span> <span class="nav-text">安装Git.</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装Hexo"><span class="nav-number">2.3.</span> <span class="nav-text">安装Hexo</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Hexo主题设置"><span class="nav-number">2.4.</span> <span class="nav-text">Hexo主题设置</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#下载主题"><span class="nav-number">2.4.1.</span> <span class="nav-text">下载主题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#启用主题"><span class="nav-number">2.4.2.</span> <span class="nav-text">启用主题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#验证主题"><span class="nav-number">2.4.3.</span> <span class="nav-text">验证主题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#增加阅读"><span class="nav-number">2.4.4.</span> <span class="nav-text">增加阅读</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#添加站内搜索"><span class="nav-number">2.4.5.</span> <span class="nav-text">添加站内搜索</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#我遇到的坑："><span class="nav-number">2.4.6.</span> <span class="nav-text">我遇到的坑：</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一、安装Hexo"><span class="nav-number">2.</span> <span class="nav-text">一、安装Hexo</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装Node-js，查看安装教程。"><span class="nav-number">2.1.</span> <span class="nav-text">安装Node.js，查看安装教程。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装Git"><span class="nav-number">2.2.</span> <span class="nav-text">安装Git.</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装Hexo"><span class="nav-number">2.3.</span> <span class="nav-text">安装Hexo</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Hexo主题设置"><span class="nav-number">2.4.</span> <span class="nav-text">Hexo主题设置</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#下载主题"><span class="nav-number">2.4.1.</span> <span class="nav-text">下载主题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#启用主题"><span class="nav-number">2.4.2.</span> <span class="nav-text">启用主题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#验证主题"><span class="nav-number">2.4.3.</span> <span class="nav-text">验证主题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#修改文章底部-标签图标为"><span class="nav-number">2.4.4.</span> <span class="nav-text">修改文章底部#标签图标为</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#增加阅读量统计"><span class="nav-number">2.4.5.</span> <span class="nav-text">增加阅读量统计</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#添加站内搜索"><span class="nav-number">2.4.6.</span> <span class="nav-text">添加站内搜索</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#我遇到的坑："><span class="nav-number">2.4.7.</span> <span class="nav-text">我遇到的坑：</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
@@ -698,7 +713,7 @@ ERROR &gt;&gt; Read https://npmjs.com/hexo-algolia#api-key for more informations
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">949</span>
+    <span title="Site words total count">1.1k</span>
   
 </div>
 
@@ -711,7 +726,7 @@ ERROR &gt;&gt; Read https://npmjs.com/hexo-algolia#api-key for more informations
 
 
 
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.3</div>
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.3</div>
 
 -->
 
@@ -818,6 +833,13 @@ ERROR &gt;&gt; Read https://npmjs.com/hexo-algolia#api-key for more informations
 
   
   
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.3"></script>
+
+
 
   
   <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
