@@ -1,8 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[github对hexo作分支管理]]></title>
+    <url>%2F2017%2F12%2F03%2FtestBranch%2F</url>
+    <content type="text"><![CDATA[摘抄自知乎CrazyMilk的回答 以作备忘。 防踩坑提示：在已建好博客的本机上增加分支管理时，按第三步执行！！！ 一、搭建流程 创建仓库http://CrazyMilk.github.io 创建两个分支：master 与 hexo 设置hexo为默认分支（因为我们只需要手动管理这个分支上的Hexo网站文件） 使用git clone git@github.com:CrazyMilk/CrazyMilk.github.io.git拷贝仓库 在本地http://CrazyMilk.github.io文件夹下通过Git bash依次执行npm install hexo、hexo init、npm install 和 npm install hexo-deployer-git（此时当前分支应显示为hexo） 修改_config.yml中的deploy参数，分支应为master 依次执行git add.、git commit -m &quot;...&quot;、git push origin hexo提交网站相关的文件 执行hexo g -d生成网站并部署到GitHub上。这样一来，在GitHub上的http://CrazyMilk.github.io仓库就有两个分支，一个hexo分支用来存放网站的原始文件，一个master分支用来存放生成的静态网页。 二、日常的改动流程在本地对博客进行修改（添加新博文、修改样式等等）后，通过下面的流程进行管理。 依次执行git add .、git commit -m &quot;...&quot;、git push origin hexo指令将改动推送到GitHub（此时当前分支应为hexo）； 然后才执行hexo g -d发布网站到master分支上。 虽然两个过程顺序调转一般不会有问题，不过逻辑上这样的顺序是绝对没问题的（例如突然死机要重装了，悲催….的情况，调转顺序就有问题了）。 三、本地资料丢失后的流程当重装电脑之后，或者想在其他电脑上修改博客，可以使用下列步骤： 使用git clone git@github.com:CrazyMilk/CrazyMilk.github.io.git拷贝仓库（默认分支为hexo）； 在本地新拷贝的http://CrazyMilk.github.io文件夹下通过Git bash依次执行下列指令：npm install hexo、npm install、npm install hexo-deployer-git（记得，不需要hexo init这条指令）。]]></content>
+      <tags>
+        <tag>hexo，github</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[基于Hexo&Github搭建个人博客（二）]]></title>
-    <url>%2F2017%2F12%2F01%2F2-2hexo%E5%8D%9A%E5%AE%A2%2F</url>
+    <url>%2F2017%2F12%2F01%2Fhexo%E5%8D%9A%E5%AE%A22%2F</url>
     <content type="text"><![CDATA[配置GitHub首先注册、登录github。 Username很重要！Username很重要！Username很重要！而且是最后博客的域名的组成部分，尽量取一个简短、全小写、好记、有意义的，比如我的jeffylong就非常不错啊hh。 右上角选择 Create a new repository。Repository name填 “username”.github.io。例如，我的博客网址是https://jeffylong.github.io/ ，就填入jeffylong.github.io。成功后出现下面的画面: 绑定SSH Key：在CMD中输入： ssh-keygen -t rsa -C &quot;Github的注册邮箱地址&quot; 一直Enter，得到如下信息： Your public key has been saved in /c/Users/user/.ssh/id_rsa.pub. 找到该文件，打开（使用sublime或其他工具），Ctrl+a复制里面的所有内容，然后登录GitHub： New SSH key： Title：blog Key：输入刚才复制的内容 点击 Add SSH key。 发表博客新建博客.md:在CMD中输入 $ hexo new &quot;我的第一篇博客&quot; INFO Created: F:\blog\source\_posts\我的第一篇博客.md 使用MarkdownPad2打开此文件，使用Markdown语法开始输入博客内容。Markdown语法介绍 F:\blog $ hexo clean INFO Deleted database. INFO Deleted public folder. . F:\blog $ hexo g INFO Start processing INFO Files loaded in 1.48 s INFO 29 files generated in 4.27 s ...... 发布到github中：F:\blog $ hexo d INFO Deploying: git INFO Clearing .deploy_git folder... INFO Copying files from public folder... 断断续续地花了将近一个星期，总算是搭建好了自己的博客，也做了一些美化，基本满足自己的所有要求，也算圆了一个以前的目标。无论以后的路怎么走，都要保持着一颗极客的心，保持好奇，追求卓越。Keep geek’s thinking ！ Keep curious！]]></content>
       <tags>
         <tag>github</tag>
@@ -10,7 +18,7 @@
   </entry>
   <entry>
     <title><![CDATA[基于Hexo&Github搭建个人博客（一）]]></title>
-    <url>%2F2017%2F12%2F01%2F2-1hexo%E5%BB%BA%E5%8D%9A%E5%AE%A2%2F</url>
+    <url>%2F2017%2F12%2F01%2Fhexo%E5%8D%9A%E5%AE%A21%2F</url>
     <content type="text"><![CDATA[前言 Hexo介绍 NexT介绍 GitHub介绍 Hexo搭建本地博客 Hexo的使用需要Node.js以及Git的支持 安装Node.js，查看安装教程。安装Git.安装Hexo：在磁盘任意路径下右键Git Bash Here，如我的是F:\，依次输入下列命令: $ npm install hexo-cli -g $ hexo init blog $ cd blog $ npm install $ hexo g $ hexo s 最终命令行显示如下： INFO Start processing INFO Hexo is running at http://localhost:4000/. Press Ctrl+C to stop.` 访问http://localhost:4000/，便可以看到初始的博客。 NexT主题的应用及修改以next主题为例，可选更多Hexo主题。 后续操作可参考next文档。 下载主题在终端窗口下，定位到 Hexo 站点目录下。使用 Git checkout 代码： $ cd blog $ git clone https://github.com/iissnan/hexo-theme-next themes/next 启用主题与所有 Hexo 主题启用的模式一样。 当 克隆/下载 完成后，打开 站点配置文件， 找到 theme 字段，并将其值更改为 next。 theme: next 验证主题首先启动 Hexo 本地站点，并开启调试模式（即加上 –debug），整个命令是hexo s --debug。 在服务启动的过程，注意观察命令行输出是否有任何异常信息，如果你碰到问题，这些信息将帮助他人更好的定位错误。 当命令行输出中提示出： INFO Hexo is running at http://0.0.0.0:4000/. Press Ctrl+C to stop. 此时即可使用浏览器访问http://localhost:4000，检查站点是否正确运行。 当你看到站点的外观与下图所示类似时即说明你已成功安装 NexT 主题。 接下来，根据个人需求，对主题进行设定和功能补充。 修改文章底部#标签图标为修改模板/themes/next/layout/_macro/post.swig，搜索 rel=&quot;tag&quot;&gt;#，将 # 换成&lt;i class=&quot;fa fa-tag&quot;&gt;&lt;/i&gt;。 增加阅读量统计 Leancloud，网站可以使用Github绑定登录，按提示完成登录。登录后，进入控制台，创建一个新应用。点击存储，按下图标记新建Class，Class名称必须为Counter。按下图的标记复制 App ID和App Key。 更改主题配置文件的leancloud_visitors:。注意将enable设为true。# Show number of visitors to each article. # You can visit https://leancloud.cn get AppID and AppKey. leancloud_visitors: enable: true app_id: #your App ID app_key: #your App Key 添加站内搜索 这里有一段伤心的故事，被安利的第一个搜索方式是Algolia，但是我尝试了2天，依旧不能完美的实现我想要的搜索功能，没想到local Search这么称我心，千金难买早知道啊！ 安装hexo-generator-searchdb，在站点的根目录下执行以下命令： $ npm install hexo-generator-searchdb --save 编辑站点配置文件，新增以下内容到任意位置：search: path: search.xml field: post format: html limit: 10000 编辑主题配置文件，启用本地搜索功能：# Local search local_search: enable: true 更多功能参考http://www.shenzekun.cn/hexo的next主题个性化配置教程.html。 我遇到的坑：bug1：配置出错$ hexo algolia ERROR [Algolia] Please set an `HEXO_ALGOLIA_INDEXING_KEY` environment variable to enable content indexing. ERROR &gt;&gt; Read https://npmjs.com/hexo-algolia#api-key for more informations. bug2：配置成功，but！！！ 搜索按钮点击没有反应，查阅了诸多解决方案，已经记不清怎么解决的了orz。附官方issues 搜索功能实现，但是在结果框多显示了搜索字段代码信息，强迫症不能忍！重来…… 搜索功能正常，但是按钮居中显示，强迫症又重新配置了…… 好了，搭建本地博客就基本完成了，下一篇再记录如何把本地博客推送到github进行托管，从而可以通过一个网址/域名访问博客。]]></content>
       <tags>
         <tag>hexo</tag>
@@ -18,7 +26,7 @@
   </entry>
   <entry>
     <title><![CDATA[我的第一篇博客]]></title>
-    <url>%2F2017%2F11%2F26%2F1%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%2F</url>
+    <url>%2F2017%2F11%2F26%2F%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%2F</url>
     <content type="text"><![CDATA[怎么想起来鼓捣博客?上个星期,闲得无聊,就又兴起了”搞机”的乐趣,于是在Vmware Station里装了linux.虽然以前接触过,还是想很系统的从零开始学.看了,想了,敲了.可还是知识的输入有余而输出不足,几天下来,虽然是很开心,但沉淀不够,于是就想到做笔记.就想到在博客里写,翻了以前的CSDN的博客,emmm…,弃之.查了些教程,以前也想自建博客,不过对服务器和域名等不甚了解,知乎上看到有用hexo+github自建博客的做法,很感兴趣,于是才有了这篇博客.步骤先简单列一下步骤挖个坑,后面在整理 hexo github theme这是第一篇博客,学着用MarkDown标记来码字,用的格式还很简单,不过很有趣. 哈哈哈,刚换了漂亮的主题,看不出目录效果,所以 其实这篇就是来凑内容的.]]></content>
       <tags>
         <tag>随笔</tag>
