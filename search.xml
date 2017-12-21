@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[人生苦短，我学Python（一）]]></title>
+    <url>%2F2017%2F12%2F21%2Fpython1%2F</url>
+    <content type="text"><![CDATA[前言说到为什么会突然想起学习Python呢？前段时间听她提到爬虫，粗略知道爬虫主要用的语言是Python；其次，在某公众号看到说Python是现在排名前5的编程语言中唯一使用人数在增加的。于是，有心学习。 Python简介Python是著名的Guido van Rossum在1989年圣诞节期间，为了打发无聊的圣诞节而编写的一个编程语言。Python是一门高级编程语言，内置了完善的基础代码库，覆盖了网络、文件、GUI、数据库、文本等大量内容，还有大量的第三方库。许多大型网站就是用Python开发的，例如YouTube、Instagram，还有国内的豆瓣。很多大公司，包括Google、Yahoo等，甚至NASA（美国航空航天局）都大量地使用Python。Python的哲学就是“优雅、明确、简单”，尽量写容易看明白的代码，尽量写少的代码。]]></content>
+      <tags>
+        <tag>Python</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[github对hexo作分支管理]]></title>
     <url>%2F2017%2F12%2F03%2FtestBranch%2F</url>
     <content type="text"><![CDATA[2017/12/3 15:15 脑子瓦特掉了，还不需要异地进行修改博客就开始忙活分支管理，最后还是不成！先丢在这，后文无效！ 摘抄自知乎CrazyMilk的回答 以作备忘http://wangmuduo.com/2016/04/02/hexo-change-os/ 防踩坑提示：在已建好博客的本机上增加分支管理时，按第三步执行！！！眉头一皱，事情没那么简单！ 一、搭建流程 创建仓库http://CrazyMilk.github.io 创建两个分支：master 与 hexo 设置hexo为默认分支（因为我们只需要手动管理这个分支上的Hexo网站文件） 使用git clone git@github.com:CrazyMilk/CrazyMilk.github.io.git拷贝仓库 在本地http://CrazyMilk.github.io文件夹下通过Git bash依次执行npm install hexo、hexo init、npm install 和 npm install hexo-deployer-git（此时当前分支应显示为hexo） 修改_config.yml中的deploy参数，分支应为master 依次执行git add.、git commit -m &quot;...&quot;、git push origin hexo提交网站相关的文件 执行hexo g -d生成网站并部署到GitHub上。这样一来，在GitHub上的http://CrazyMilk.github.io仓库就有两个分支，一个hexo分支用来存放网站的原始文件，一个master分支用来存放生成的静态网页。 二、日常的改动流程在本地对博客进行修改（添加新博文、修改样式等等）后，通过下面的流程进行管理。 依次执行git add .、git commit -m &quot;...&quot;、git push origin hexo指令将改动推送到GitHub（此时当前分支应为hexo）； 然后才执行hexo g -d发布网站到master分支上。 虽然两个过程顺序调转一般不会有问题，不过逻辑上这样的顺序是绝对没问题的（例如突然死机要重装了，悲催….的情况，调转顺序就有问题了）。 三、本地资料丢失后的流程当重装电脑之后，或者想在其他电脑上修改博客，可以使用下列步骤： 使用git clone git@github.com:CrazyMilk/CrazyMilk.github.io.git拷贝仓库（默认分支为hexo）； 在本地新拷贝的http://CrazyMilk.github.io文件夹下通过Git bash依次执行下列指令：npm install hexo、npm install、npm install hexo-deployer-git（记得，不需要hexo init这条指令）。]]></content>
@@ -22,14 +30,6 @@
     <content type="text"><![CDATA[前言 Hexo介绍 NexT介绍 GitHub介绍 Hexo搭建本地博客 Hexo的使用需要Node.js以及Git的支持 安装Node.js，查看安装教程。安装Git.安装Hexo：在磁盘任意路径下右键Git Bash Here，如我的是F:\，依次输入下列命令: $ npm install hexo-cli -g $ hexo init blog $ cd blog $ npm install $ hexo g $ hexo s 最终命令行显示如下： INFO Start processing INFO Hexo is running at http://localhost:4000/. Press Ctrl+C to stop.` 访问http://localhost:4000/，便可以看到初始的博客。 NexT主题的应用及修改以next主题为例，可选更多Hexo主题。 后续操作可参考next文档。 下载主题在终端窗口下，定位到 Hexo 站点目录下。使用 Git checkout 代码： $ cd blog $ git clone https://github.com/iissnan/hexo-theme-next themes/next 启用主题与所有 Hexo 主题启用的模式一样。 当 克隆/下载 完成后，打开 站点配置文件， 找到 theme 字段，并将其值更改为 next。 theme: next 验证主题首先启动 Hexo 本地站点，并开启调试模式（即加上 –debug），整个命令是hexo s --debug。 在服务启动的过程，注意观察命令行输出是否有任何异常信息，如果你碰到问题，这些信息将帮助他人更好的定位错误。 当命令行输出中提示出： INFO Hexo is running at http://0.0.0.0:4000/. Press Ctrl+C to stop. 此时即可使用浏览器访问http://localhost:4000，检查站点是否正确运行。 当你看到站点的外观与下图所示类似时即说明你已成功安装 NexT 主题。 接下来，根据个人需求，对主题进行设定和功能补充。 修改文章底部#标签图标为修改模板/themes/next/layout/_macro/post.swig，搜索 rel=&quot;tag&quot;&gt;#，将 # 换成&lt;i class=&quot;fa fa-tag&quot;&gt;&lt;/i&gt;。 增加阅读量统计 Leancloud，网站可以使用Github绑定登录，按提示完成登录。登录后，进入控制台，创建一个新应用。点击存储，按下图标记新建Class，Class名称必须为Counter。按下图的标记复制 App ID和App Key。 更改主题配置文件的leancloud_visitors:。注意将enable设为true。# Show number of visitors to each article. # You can visit https://leancloud.cn get AppID and AppKey. leancloud_visitors: enable: true app_id: #your App ID app_key: #your App Key 添加站内搜索 这里有一段伤心的故事，被安利的第一个搜索方式是Algolia，但是我尝试了2天，依旧不能完美的实现我想要的搜索功能，没想到local Search这么称我心，千金难买早知道啊！ 安装hexo-generator-searchdb，在站点的根目录下执行以下命令： $ npm install hexo-generator-searchdb --save 编辑站点配置文件，新增以下内容到任意位置：search: path: search.xml field: post format: html limit: 10000 编辑主题配置文件，启用本地搜索功能：# Local search local_search: enable: true 更多功能参考http://www.shenzekun.cn/hexo的next主题个性化配置教程.html。 我遇到的坑：bug1：配置出错$ hexo algolia ERROR [Algolia] Please set an `HEXO_ALGOLIA_INDEXING_KEY` environment variable to enable content indexing. ERROR &gt;&gt; Read https://npmjs.com/hexo-algolia#api-key for more informations. bug2：配置成功，but！！！ 搜索按钮点击没有反应，查阅了诸多解决方案，已经记不清怎么解决的了orz。附官方issues 搜索功能实现，但是在结果框多显示了搜索字段代码信息，强迫症不能忍！重来…… 搜索功能正常，但是按钮居中显示，强迫症又重新配置了…… 好了，搭建本地博客就基本完成了，下一篇再记录如何把本地博客推送到github进行托管，从而可以通过一个网址/域名访问博客。]]></content>
       <tags>
         <tag>hexo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[人生苦短，我学Python（一）]]></title>
-    <url>%2F2017%2F12%2F01%2Fpython1%2F</url>
-    <content type="text"><![CDATA[前言说到为什么会突然想起学习Python呢？前段时间听她提到爬虫，粗略知道爬虫主要用的语言是Python；其次，在某公众号看到说Python是现在排名前5的编程语言中唯一使用人数在增加的。于是，有心学习。 Python简介Python是著名的Guido van Rossum在1989年圣诞节期间，为了打发无聊的圣诞节而编写的一个编程语言。Python是一门高级编程语言，内置了完善的基础代码库，覆盖了网络、文件、GUI、数据库、文本等大量内容，还有大量的第三方库。许多大型网站就是用Python开发的，例如YouTube、Instagram，还有国内的豆瓣。很多大公司，包括Google、Yahoo等，甚至NASA（美国航空航天局）都大量地使用Python。Python的哲学就是“优雅、明确、简单”，尽量写容易看明白的代码，尽量写少的代码。]]></content>
-      <tags>
-        <tag>Python</tag>
       </tags>
   </entry>
   <entry>
