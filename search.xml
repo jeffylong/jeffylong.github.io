@@ -25,6 +25,14 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[人生苦短，我学Python（一）]]></title>
+    <url>%2F2017%2F12%2F01%2Fpython1%2F</url>
+    <content type="text"><![CDATA[前言说到为什么会突然想起学习Python呢？前段时间听她提到爬虫，粗略知道爬虫主要用的语言是Python；其次，在某公众号看到说Python是现在排名前5的编程语言中唯一使用人数在增加的。于是，有心学习。 Python简介Python是著名的Guido van Rossum在1989年圣诞节期间，为了打发无聊的圣诞节而编写的一个编程语言。Python是一门高级编程语言，内置了完善的基础代码库，覆盖了网络、文件、GUI、数据库、文本等大量内容，还有大量的第三方库。许多大型网站就是用Python开发的，例如YouTube、Instagram，还有国内的豆瓣。很多大公司，包括Google、Yahoo等，甚至NASA（美国航空航天局）都大量地使用Python。Python的哲学就是“优雅、明确、简单”，尽量写容易看明白的代码，尽量写少的代码。]]></content>
+      <tags>
+        <tag>Python</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[我的第一篇博客]]></title>
     <url>%2F2017%2F11%2F26%2F%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%2F</url>
     <content type="text"><![CDATA[怎么想起来鼓捣博客?上个星期,闲得无聊,就又兴起了”搞机”的乐趣,于是在Vmware Station里装了linux.虽然以前接触过,还是想很系统的从零开始学.看了,想了,敲了.可还是知识的输入有余而输出不足,几天下来,虽然是很开心,但沉淀不够,于是就想到做笔记.就想到在博客里写,翻了以前的CSDN的博客,emmm…,弃之.查了些教程,以前也想自建博客,不过对服务器和域名等不甚了解,知乎上看到有用hexo+github自建博客的做法,很感兴趣,于是才有了这篇博客.步骤先简单列一下步骤挖个坑,后面在整理 hexo github theme这是第一篇博客,学着用MarkDown标记来码字,用的格式还很简单,不过很有趣. 哈哈哈,刚换了漂亮的主题,看不出目录效果,所以 其实这篇就是来凑内容的.]]></content>
