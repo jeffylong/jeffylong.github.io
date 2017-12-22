@@ -420,13 +420,9 @@
           <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>说到为什么会突然想起学习Python呢？前段时间听她提到爬虫，粗略知道爬虫主要用的语言是Python；其次，在某公众号看到说Python是现在排名前5的编程语言中唯一使用人数在增加的。于是，有心学习。</p>
 <h2 id="Python简介"><a href="#Python简介" class="headerlink" title="Python简介"></a>Python简介</h2><p>Python是著名的Guido van Rossum在1989年圣诞节期间，为了打发无聊的圣诞节而编写的一个编程语言。</p>
 <h4 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h4><p>Python是一门高级编程语言，内置了完善的基础代码库，覆盖了网络、文件、GUI、数据库、文本等大量内容，还有大量的第三方库。许多大型网站就是用Python开发的，例如YouTube、Instagram，还有国内的豆瓣。很多大公司，包括Google、Yahoo等，甚至NASA（美国航空航天局）都大量地使用Python。<br>Python的哲学就是“优雅、明确、简单”，尽量写容易看明白的代码，尽量写少的代码。</p>
-<h4 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h4><ol>
-<li>运行速度慢<br>python是解释型语言，代码在执行时会一行一行地翻译成CPU能理解的机器码，这非常耗时。而c语言则是运行前直接编译成CPU能执行的机器码。</li>
-<li>代码无法加密<br>如果要发布你的Python程序，实际上就是发布源代码，这一点跟C语言不同，C语言不用发布源代码，只需要发布编译后的机器码，要从机器码反编译出C代码是不可能的，所以，凡是编译型的语言，都没有这个问题，而解释型的语言，则必须把源码发布出去。</li>
-</ol>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/12/21/python1/#espandi" rel="contents">
+            <a class="btn" href="/2017/12/21/python1/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -577,26 +573,32 @@
 
       
         
-          
-          
-2017/12/3 15:15 脑子瓦特掉了，还不需要异地进行修改博客就开始忙活分支管理，最后还是不成！先丢在这，后文无效！
-
-
-摘抄自知乎CrazyMilk的回答 以作备忘http://wangmuduo.com/2016/04/02/hexo-change-os/
-
-防踩坑提示：在已建好博客的本机上增加分支管理时，按第三步执行！！！眉头一皱，事情没那么简单！
-一、搭建流程
-创建仓库http://CrazyMilk.github.io
-
-创建两个分支：master 与 hexo
-
-设置hexo为默认分支（因为我们只需要手动管理这个分支上的Hexo网站文件）
-
-使用git clone git
-          ...
+          <hr>
+<p>2017/12/3 15:15 脑子瓦特掉了，还不需要异地进行修改博客就开始忙活分支管理，最后还是不成！先丢在这，后文无效！</p>
+<hr>
+<blockquote>
+<p>摘抄自<a href="https://www.zhihu.com/" target="_blank" rel="noopener">知乎CrazyMilk的回答</a> 以作备忘<br><a href="http://wangmuduo.com/2016/04/02/hexo-change-os/" target="_blank" rel="noopener">http://wangmuduo.com/2016/04/02/hexo-change-os/</a></p>
+</blockquote>
+<p><strong><em>防踩坑提示：在已建好博客的本机上增加分支管理时，按第三步执行！！！</em></strong><br>眉头一皱，事情没那么简单！</p>
+<h2 id="一、搭建流程"><a href="#一、搭建流程" class="headerlink" title="一、搭建流程"></a>一、搭建流程</h2><ul>
+<li><p>创建仓库<a href="http://CrazyMilk.github.io" target="_blank" rel="noopener">http://CrazyMilk.github.io</a></p>
+</li>
+<li><p>创建两个分支：master 与 hexo</p>
+</li>
+<li><p>设置hexo为默认分支（因为我们只需要手动管理这个分支上的Hexo网站文件）</p>
+</li>
+<li><p>使用<code>git clone git@github.com:CrazyMilk/CrazyMilk.github.io.git</code>拷贝仓库</p>
+</li>
+<li><p>在本地<a href="http://CrazyMilk.github.io文件夹下通过Git" target="_blank" rel="noopener">http://CrazyMilk.github.io文件夹下通过Git</a> bash依次执行<code>npm install hexo</code>、<code>hexo init</code>、<code>npm install</code> 和 <code>npm install hexo-deployer-git</code>（此时当前分支应显示为hexo）</p>
+</li>
+<li><p>修改_config.yml中的deploy参数，分支应为master</p>
+</li>
+<li><p>依次执行<code>git add.</code>、<code>git commit -m &quot;...&quot;</code>、<code>git push origin hexo</code>提交网站相关的文件</p>
+</li>
+<li><p>执行hexo g -d生成网站并部署到GitHub上。这样一来，在GitHub上的<a href="http://CrazyMilk.github.io仓库就有两个分支，一个hexo分支用来存放网站的原始文件，一个master分支用来存放生成的静态网页。" target="_blank" rel="noopener">http://CrazyMilk.github.io仓库就有两个分支，一个hexo分支用来存放网站的原始文件，一个master分支用来存放生成的静态网页。</a></p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/12/03/testBranch/#espandi" rel="contents">
+            <a class="btn" href="/2017/12/03/testBranch/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -753,7 +755,7 @@
 <h3 id="右上角选择-Create-a-new-repository。"><a href="#右上角选择-Create-a-new-repository。" class="headerlink" title="右上角选择 Create a new repository。"></a>右上角选择 <a href="https://github.com/new" target="_blank" rel="noopener">Create a new repository</a>。</h3><h4 id="Repository-name填-“username”-github-io。"><a href="#Repository-name填-“username”-github-io。" class="headerlink" title="Repository name填 “username”.github.io。"></a>Repository name填 “username”.github.io。</h4><p>例如，我的博客网址是<a href="https://jeffylong.github.io/" target="_blank" rel="noopener">https://jeffylong.github.io/</a> ，就填入jeffylong.github.io。<br>成功后出现下面的画面:<br><img src="http://i.imgur.com/JNWXHHS.jpg" alt="http://i.imgur.com/JNWXHHS.jpg"></p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/12/01/hexo博客2/#espandi" rel="contents">
+            <a class="btn" href="/2017/12/01/hexo博客2/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -922,14 +924,10 @@ $ hexo s
 </code></pre><p>最终命令行显示如下：</p>
 <pre><code>INFO  Start processing
 INFO  Hexo is running at http://localhost:4000/. Press Ctrl+C to stop.`
-</code></pre><p>访问<a href="http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000/</a>，便可以看到初始的博客。</p>
-<h2 id="NexT主题的应用及修改"><a href="#NexT主题的应用及修改" class="headerlink" title="NexT主题的应用及修改"></a>NexT主题的应用及修改</h2><p>以next主题为例，可选<a href="https://hexo.io/themes/" target="_blank" rel="noopener">更多Hexo主题</a>。</p>
-<blockquote>
-<p>后续操作可参考<a href="http://theme-next.iissnan.com/" target="_blank" rel="noopener">next文档</a>。</p>
-</blockquote>
+</code></pre><p>访问<a href="http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000/</a>，便可以看到初始的博客。<br>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/12/01/hexo博客1/#espandi" rel="contents">
+            <a class="btn" href="/2017/12/01/hexo博客1/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1080,15 +1078,16 @@ INFO  Hexo is running at http://localhost:4000/. Press Ctrl+C to stop.`
 
       
         
-          
-          怎么想起来鼓捣博客?上个星期,闲得无聊,就又兴起了”搞机”的乐趣,于是在Vmware Station里装了linux.虽然以前接触过,还是想很系统的从零开始学.看了,想了,敲了.可还是知识的输入有余而输出不足,几天下来,虽然是很开心,但沉淀不够,于是就想到做笔记.就想到在博客里写,翻了以前的CSDN的博客,emmm…,弃之.查了些教程,以前也想自建博客,不过对服务器和域名等不甚了解,知乎上看到有用hexo+github自建博客的做法,很感兴趣,于是才有了这篇博客.步骤先简单列一下步骤挖个坑,后面在整理
-hexo
-github
-theme这是第一篇博客,学着用MarkDown标记来码字,用的格式
-          ...
+          <h2 id="怎么想起来鼓捣博客"><a href="#怎么想起来鼓捣博客" class="headerlink" title="怎么想起来鼓捣博客?"></a>怎么想起来鼓捣博客?</h2><h5 id="上个星期-闲得无聊-就又兴起了”搞机”的乐趣-于是在Vmware-Station里装了linux-虽然以前接触过-还是想很系统的从零开始学-看了-想了-敲了-可还是知识的输入有余而输出不足-几天下来-虽然是很开心-但沉淀不够-于是就想到做笔记-就想到在博客里写-翻了以前的CSDN的博客-emmm…-弃之-查了些教程-以前也想自建博客-不过对服务器和域名等不甚了解-知乎上看到有用hexo-github自建博客的做法-很感兴趣-于是才有了这篇博客"><a href="#上个星期-闲得无聊-就又兴起了”搞机”的乐趣-于是在Vmware-Station里装了linux-虽然以前接触过-还是想很系统的从零开始学-看了-想了-敲了-可还是知识的输入有余而输出不足-几天下来-虽然是很开心-但沉淀不够-于是就想到做笔记-就想到在博客里写-翻了以前的CSDN的博客-emmm…-弃之-查了些教程-以前也想自建博客-不过对服务器和域名等不甚了解-知乎上看到有用hexo-github自建博客的做法-很感兴趣-于是才有了这篇博客" class="headerlink" title="上个星期,闲得无聊,就又兴起了”搞机”的乐趣,于是在Vmware Station里装了linux.虽然以前接触过,还是想很系统的从零开始学.看了,想了,敲了.可还是知识的输入有余而输出不足,几天下来,虽然是很开心,但沉淀不够,于是就想到做笔记.就想到在博客里写,翻了以前的CSDN的博客,emmm…,弃之.查了些教程,以前也想自建博客,不过对服务器和域名等不甚了解,知乎上看到有用hexo+github自建博客的做法,很感兴趣,于是才有了这篇博客."></a>上个星期,闲得无聊,就又兴起了”搞机”的乐趣,于是在Vmware Station里装了linux.虽然以前接触过,还是想很系统的从零开始学.看了,想了,敲了.可还是知识的输入有余而输出不足,几天下来,虽然是很开心,但沉淀不够,于是就想到做笔记.就想到在博客里写,翻了以前的CSDN的博客,emmm…,弃之.查了些教程,以前也想自建博客,不过对服务器和域名等不甚了解,知乎上看到有用hexo+github自建博客的做法,很感兴趣,于是才有了这篇博客.</h5><h4 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h4><h5 id="先简单列一下步骤挖个坑-后面在整理"><a href="#先简单列一下步骤挖个坑-后面在整理" class="headerlink" title="先简单列一下步骤挖个坑,后面在整理"></a>先简单列一下步骤挖个坑,后面在整理</h5><ul>
+<li>hexo</li>
+<li>github</li>
+<li>theme<h5 id="这是第一篇博客-学着用MarkDown标记来码字-用的格式还很简单-不过很有趣"><a href="#这是第一篇博客-学着用MarkDown标记来码字-用的格式还很简单-不过很有趣" class="headerlink" title="这是第一篇博客,学着用MarkDown标记来码字,用的格式还很简单,不过很有趣."></a>这是第一篇博客,学着用MarkDown标记来码字,用的格式还很简单,不过很有趣.</h5></li>
+</ul>
+<hr>
+<h6 id="哈哈哈-刚换了漂亮的主题-看不出目录效果-所以-其实这篇就是来凑内容的"><a href="#哈哈哈-刚换了漂亮的主题-看不出目录效果-所以-其实这篇就是来凑内容的" class="headerlink" title="哈哈哈,刚换了漂亮的主题,看不出目录效果,所以 其实这篇就是来凑内容的."></a>哈哈哈,刚换了漂亮的主题,看不出目录效果,所以 其实这篇就是来凑内容的.</h6>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/11/26/我的第一篇博客/#espandi" rel="contents">
+            <a class="btn" href="/2017/11/26/我的第一篇博客/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
