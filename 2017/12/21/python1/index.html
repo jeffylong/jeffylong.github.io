@@ -131,13 +131,10 @@
 <meta property="og:site_name" content="一个逗号">
 <meta property="og:description" content="前言说到为什么会突然想起学习Python呢？前段时间听她提到爬虫，粗略知道爬虫主要用的语言是Python；其次，在某公众号看到说Python是现在排名前5的编程语言中唯一使用人数在增加的。于是，有心学习。 Python简介Python是著名的Guido van Rossum在1989年圣诞节期间，为了打发无聊的圣诞节而编写的一个编程语言。 优点Python是一门高级编程语言，内置了完善的基础代码库">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://cdn.liaoxuefeng.com/cdn/files/attachments/0014466016166222cc7c2907cef4caab66ad8d53e77841e000/l">
-<meta property="og:image" content="https://cdn.liaoxuefeng.com/cdn/files/attachments/001446601591019cbba6e698d32429bb4754753d86e286a000/l">
-<meta property="og:updated_time" content="2017-12-23T11:08:34.718Z">
+<meta property="og:updated_time" content="2017-12-24T05:53:10.074Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="人生苦短，我学Python（一）">
 <meta name="twitter:description" content="前言说到为什么会突然想起学习Python呢？前段时间听她提到爬虫，粗略知道爬虫主要用的语言是Python；其次，在某公众号看到说Python是现在排名前5的编程语言中唯一使用人数在增加的。于是，有心学习。 Python简介Python是著名的Guido van Rossum在1989年圣诞节期间，为了打发无聊的圣诞节而编写的一个编程语言。 优点Python是一门高级编程语言，内置了完善的基础代码库">
-<meta name="twitter:image" content="https://cdn.liaoxuefeng.com/cdn/files/attachments/0014466016166222cc7c2907cef4caab66ad8d53e77841e000/l">
 
 
 
@@ -396,7 +393,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1,378
+                  2,120
                 </span>
               
 
@@ -434,8 +431,7 @@
 <ul>
 <li style="list-style: none"><input type="checkbox" checked> Add Python 3.6 to PATH</li>
 </ul>
-<p><img src="https://cdn.liaoxuefeng.com/cdn/files/attachments/0014466016166222cc7c2907cef4caab66ad8d53e77841e000/l" alt=""></p>
-<p>安装成功后，在命令行中输入<code>python</code>，即可进入Python交互式环境中（<code>&gt;&gt;&gt;</code>即表示当前模式为Python环境）<br><img src="https://cdn.liaoxuefeng.com/cdn/files/attachments/001446601591019cbba6e698d32429bb4754753d86e286a000/l" alt=""></p>
+<p>安装成功后，在命令行中输入<code>python</code>，即可进入Python交互式环境中（<code>&gt;&gt;&gt;</code>即表示当前模式为Python环境）</p>
 <h3 id="Python解释器"><a href="#Python解释器" class="headerlink" title="Python解释器"></a>Python解释器</h3><p>Python的代码文件是一个以<code>.py</code>为扩展名的文本文件，需要Python解释器去执行.py文件。主流的解释器有CPython、IPython、PyPy、IronPython等。<br>但使用最广泛的还是CPython，这是官方版本的解释器。基于c语言开发，在命令行下运行<code>python</code>就是启动CPython解释器，以<code>&gt;&gt;&gt;</code>作为提示符。</p>
 <h2 id="开始写Python"><a href="#开始写Python" class="headerlink" title="开始写Python"></a>开始写Python</h2><h3 id="hello-python"><a href="#hello-python" class="headerlink" title="hello,python"></a>hello,python</h3><p>在文本编辑器中新建一个文件输入<code>print(&#39;hello,python&#39;)</code>，保存为<code>hello.py</code>文件（文件名只能是英文字母、数字、下划线的组合）。打开命令行窗口，切换到.py文件的目录，输入<code>python hello.py</code><br>文本编辑器推荐Sublime Text；绝对不能用word或者记事本，因为word保存的不是纯文本文件，而记事本会自作聪明地在文件开始位置加上几个特殊字符（UTF-8 BOM），结果导致程序运行出现莫名其妙的错误。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">F:\py&gt;python hello.py</span><br><span class="line">hello,python</span><br></pre></td></tr></table></figure></p>
 <blockquote>
@@ -444,6 +440,26 @@
 <h3 id="字符串和编码"><a href="#字符串和编码" class="headerlink" title="字符串和编码"></a>字符串和编码</h3><p>因为计算机只能处理数字，如果要处理文字，就必须先把文本转换成数字。最早的计算机在设计时采用8个比特（bit）作为一个字节（byte），所以，一个字节能表示的最大整数是255（二进制11111111=十进制255），那么要表示更大的整数需要更多的字节，比如，两个字节表示的最大整数是65535，四个字节是4294967295。<br>计算机最初只有127个字符被编码，即大小写英文字母、数字和一些符号，这个编码称为<code>ASCII</code>编码，比如A的编码是65，小写z是122。</p>
 <p>处理中文需要至少两个字节，而且不能与ASCII编码重复，所以中国制定了GB2312编码用来编码中文字符。如法炮制，日文的编码规则是Shift_JIS,韩文的编码是Euc_kr。各国标准不同导致多语言文本中显示乱码。<br>因此，Unicode应运而生。它将所有语言统一到一套编码中，解决了乱码的问题。<br>ASCII与Unicode编码的区别在于：前者编码是1个字节，而后者通常是2个字节。<br>字母<code>A</code>用ASCII编码是十进制的<code>65</code>，二进制的<code>01000001</code>；<br>字符<code>0</code>用ASCII编码是十进制的<code>48</code>，二进制的<code>00110000</code>（注意字符<code>0</code>和整数<code>0</code>是不同的）；<br>汉字<code>中</code>已经超出了ASCII的范围，用Unicode编码是十进制的<code>20013</code>，二进制的<code>01001110 00101101</code>。<br>如果把ASCII编码的A用Unicode编码，只需要在前面补0，即<code>00000000 00101101</code>。</p>
 <p>由于Unicode比ASCII多占了一倍的存储空间，所以又出现了把Unicode转化为“可变长编码”的<code>UTF-8</code>编码。根据不同的符号而变化字节长度，当字符在ASCII码的范围时，就用一个字节表示，保留了ASCII字符一个字节的编码做为它的一部分，注意的是unicode一个中文字符占2个字节，而UTF-8一个中文字符占3个字节）。从unicode到uft-8并不是直接的对应，而是要过一些算法和规则来转换。在计算机内存中，统一使用Unicode编码，而在传输时就转换成UTF-8。</p>
+<h3 id="list和tuple"><a href="#list和tuple" class="headerlink" title="list和tuple"></a>list和tuple</h3><p>Python内置的一种数据类型：list是一种有序的集合，可以随时添加和删除其中元素。类似c/java中的数组<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt;array = [1,2,3,4,5]</span><br><span class="line">&gt;&gt;&gt;array</span><br><span class="line">[1,2,3,4,5]</span><br></pre></td></tr></table></figure></p>
+<p>不同的是，list是可变的有序表。<br><strong>增加：</strong>可以用<code>array.append(6)</code>追加元素到末尾；也可以用<code>array.insert(0,0)</code>把元素插入到指定位置。<br><strong>删除：</strong>可以用<code>array.pop()</code>删除末尾元素；也可以用<code>array.pop(i)</code>其中i是索引，删除指定元素。<br><strong>修改：</strong>直接赋值给对应的索引位置。<br>list的元素也可以是list，这样就组成了二维甚至更多维数组。</p>
+<p>tuple：元组。与list类似，但tuple一旦初始化就不能再修改，即定长定值。<br><em>可以list作为tuple的元素实现tuple可变</em></p>
+<h3 id="条件判断"><a href="#条件判断" class="headerlink" title="条件判断"></a>条件判断</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">if &lt;条件判断1&gt;:</span><br><span class="line">    &lt;执行1&gt;</span><br><span class="line">elif &lt;条件判断2&gt;:</span><br><span class="line">    &lt;执行2&gt;</span><br><span class="line">elif &lt;条件判断3&gt;:</span><br><span class="line">    &lt;执行3&gt;</span><br><span class="line">else:</span><br><span class="line">    &lt;执行4&gt;</span><br></pre></td></tr></table></figure>
+<p>练习</p>
+<p>小明身高1.75，体重80.5kg。请根据BMI公式（体重除以身高的平方）帮小明计算他的BMI指数，并根据BMI指数：<br>低于18.5：过轻<br>18.5-25：正常<br>25-28：过重<br>28-32：肥胖<br>高于32：严重肥胖<br>用if-elif判断并打印结果：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"># -*- coding: utf-8 -*-</span><br><span class="line">height = 1.75</span><br><span class="line">weight = 80.5</span><br><span class="line">bmi = height/(weight*weight)</span><br><span class="line">if bmi &lt; 18.5:</span><br><span class="line">	print(&apos;too thin&apos;)</span><br><span class="line">elif bmi &lt; 25:</span><br><span class="line">	print(&apos;normal&apos;)</span><br><span class="line">elif bmi &lt; 28:</span><br><span class="line">	print(&apos;too heavy&apos;)</span><br><span class="line">elif bmi &lt; 32:</span><br><span class="line">	print(&apos;fat&apos;)</span><br><span class="line">else:</span><br><span class="line">	print(&apos;serious fat&apos;)</span><br></pre></td></tr></table></figure></p>
+<h3 id="循环"><a href="#循环" class="headerlink" title="循环"></a>循环</h3><p>Python的循环有两种，一种是for…in循环，依次把list或tuple中的每个元素迭代出来.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sum = 0</span><br><span class="line">for x in range(101):</span><br><span class="line">    sum = sum + x</span><br><span class="line">print(sum)</span><br></pre></td></tr></table></figure></p>
+<p>第二种循环是while循环，只要条件满足，就不断循环，条件不满足时退出循环.<br><code>break/continue</code>用法与c/java相同。</p>
+<h3 id="dict-amp-set"><a href="#dict-amp-set" class="headerlink" title="dict &amp; set"></a>dict &amp; set</h3><p>Python内置了字典：dict的支持，dict全称dictionary，在其他语言中也称为map，使用键-值（key-value）存储，具有极快的查找速度。<br>和list比较，dict有以下几个特点：</p>
+<ul>
+<li>查找和插入的速度极快，不会随着key的增加而变慢；</li>
+<li>需要占用大量的内存，内存浪费多。</li>
+</ul>
+<p>而list相反：</p>
+<ul>
+<li>查找和插入的时间随着元素的增加而增加；</li>
+<li>占用空间小，浪费内存很少。</li>
+</ul>
+<p>所以，dict是用空间来换取时间的一种方法。<br>dict可以用在需要高速查找的很多地方，在Python代码中几乎无处不在，正确使用dict非常重要，需要牢记的第一条就是dict的key必须是不可变对象。这是因为dict根据key来计算value的存储位置，如果每次计算相同的key得出的结果不同，那dict内部就完全混乱了。这个通过key计算位置的算法称为哈希算法（Hash）。</p>
+<p>set和dict类似，也是一组key的集合，但不存储value</p>
 
       
     </div>
@@ -625,7 +641,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Python简介"><span class="nav-number">2.</span> <span class="nav-text">Python简介</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#优点"><span class="nav-number">2.0.1.</span> <span class="nav-text">优点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#缺点"><span class="nav-number">2.0.2.</span> <span class="nav-text">缺点</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#在windows上安装Python"><span class="nav-number">3.</span> <span class="nav-text">在windows上安装Python</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Python解释器"><span class="nav-number">3.1.</span> <span class="nav-text">Python解释器</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#开始写Python"><span class="nav-number">4.</span> <span class="nav-text">开始写Python</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#hello-python"><span class="nav-number">4.1.</span> <span class="nav-text">hello,python</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#字符串和编码"><span class="nav-number">4.2.</span> <span class="nav-text">字符串和编码</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Python简介"><span class="nav-number">2.</span> <span class="nav-text">Python简介</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#优点"><span class="nav-number">2.0.1.</span> <span class="nav-text">优点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#缺点"><span class="nav-number">2.0.2.</span> <span class="nav-text">缺点</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#在windows上安装Python"><span class="nav-number">3.</span> <span class="nav-text">在windows上安装Python</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Python解释器"><span class="nav-number">3.1.</span> <span class="nav-text">Python解释器</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#开始写Python"><span class="nav-number">4.</span> <span class="nav-text">开始写Python</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#hello-python"><span class="nav-number">4.1.</span> <span class="nav-text">hello,python</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#字符串和编码"><span class="nav-number">4.2.</span> <span class="nav-text">字符串和编码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#list和tuple"><span class="nav-number">4.3.</span> <span class="nav-text">list和tuple</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#条件判断"><span class="nav-number">4.4.</span> <span class="nav-text">条件判断</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#循环"><span class="nav-number">4.5.</span> <span class="nav-text">循环</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#dict-amp-set"><span class="nav-number">4.6.</span> <span class="nav-text">dict & set</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -659,7 +675,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">3.5k</span>
+    <span title="Site words total count">4.3k</span>
   
 </div>
 
